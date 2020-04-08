@@ -1,23 +1,25 @@
 .ButtonContainer {
-  width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  height: 50%;
+  width: 80%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .SoundButton {
   outline: none;
   border: none;
   width: 100px;
-  margin-right: 20px;
-  background-color: #f8bbd0;
-  border-radius: 15px;
+  height: 60px;
+  background: radial-gradient(#e1ceff, #3a1f8b);
   padding: 20px;
+  border-radius: 2px;
   cursor: pointer;
-}
-
-.SoundButton:hover {
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 .SoundButton__playable {
-  border: 1px solid red;
+  background: radial-gradient(#a189c7, #403468);
 }

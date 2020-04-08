@@ -5,24 +5,28 @@ import { DrumButton } from './DrumButton';
 
 const DrumButtonsList: DrumButtons = [
   {
-    name: 'A',
-    sound: 'assets/8bitkit-explosion-6.wav',
+    name: 'bounce',
+    sound: 'assets/8bitkit-bounce.wav',
   },
   {
-    name: 'S',
+    name: 'explosion',
     sound: 'assets/8bitkit-explosion-2.wav',
   },
   {
-    name: 'D',
-    sound: 'assets/8bitkit-explosion-3.wav',
+    name: 'coin',
+    sound: 'assets/8bitkit-coin-3.wav',
   },
   {
-    name: 'F',
-    sound: 'assets/8bitkit-explosion-4.wav',
+    name: 'jump',
+    sound: 'assets/8bitkit-jump-4.wav',
   },
   {
-    name: 'G',
-    sound: 'assets/8bitkit-explosion-5.wav',
+    name: 'select',
+    sound: 'assets/8bitkit-select-2.wav',
+  },
+  {
+    name: 'laser',
+    sound: 'assets/8bitkit-laser-2.wav',
   },
 ]
 
