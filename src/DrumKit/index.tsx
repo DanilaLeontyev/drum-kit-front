@@ -1,3 +1,4 @@
+import './style.css';
 import React from 'react';
 import { DrumButtons } from './types';
 import { DrumButton } from './DrumButton';
@@ -26,10 +27,8 @@ const DrumButtonsList: DrumButtons = [
 ]
 
 export const DrumKit = () => {
-  const audioCtx = new window.AudioContext();
-  console.log(audioCtx);
   return (
-    <div>
+    <div className="ButtonContainer">
       {
         DrumButtonsList.map((button) => {
           return <DrumButton key={Math.random()} button={button} />

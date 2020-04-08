@@ -1,0 +1,23 @@
+.ButtonContainer {
+  width: 500px;
+  display: flex;
+}
+
+.SoundButton {
+  outline: none;
+  border: none;
+  width: 100px;
+  margin-right: 20px;
+  background-color: #f8bbd0;
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.SoundButton:hover {
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.SoundButton__playable {
+  border: 1px solid red;
+}
