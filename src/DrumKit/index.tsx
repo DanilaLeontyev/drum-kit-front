@@ -1,36 +1,23 @@
 import './style.css';
 import React from 'react';
-import { DrumButtons } from './types';
 import { DrumButton } from './DrumButton';
+import { DrumButtonsList } from './DrumButtonsList';
 
-const DrumButtonsList: DrumButtons = [
-  {
-    name: 'bounce',
-    sound: 'assets/8bitkit-bounce.wav',
-  },
-  {
-    name: 'explosion',
-    sound: 'assets/8bitkit-explosion-2.wav',
-  },
-  {
-    name: 'coin',
-    sound: 'assets/8bitkit-coin-3.wav',
-  },
-  {
-    name: 'jump',
-    sound: 'assets/8bitkit-jump-4.wav',
-  },
-  {
-    name: 'select',
-    sound: 'assets/8bitkit-select-2.wav',
-  },
-  {
-    name: 'laser',
-    sound: 'assets/8bitkit-laser-2.wav',
-  },
-]
+const playSound = (e: KeyboardEvent) => {
+  const button: HTMLButtonElement | null = document.querySelector(`button[data-key="${e.keyCode}"]`)
+  if (button) {
+    button.click()
+  }
+}
 
 export const DrumKit = () => {
+  React.useEffect(() => {
+    window.onkeydown = playSound;
+    return () => {
+      window.onkeydown = null;
+    }
+  }, [])
+
   return (
     <div className="ButtonContainer">
       {

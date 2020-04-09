@@ -26,13 +26,14 @@ export const DrumButton = (props: DrumButtonProps) => {
         if (audio.ended) {
           setButtonClassName(initState.buttonClassName)
         }
-      }, Math.floor(audio.duration * 1000 + 100))
+      }, Math.floor(audio.duration * 1000 + 150))
     };
   }
 
   return (
-    <button ref={buttonRef} className={buttonClassName.join(' ')} onClick={onPlayClick}>
-      {props.button.name}
+    <button data-key={props.button.keycode.eventCode} ref={buttonRef} className={buttonClassName.join(' ')} onClick={onPlayClick}>
+      <p>{props.button.name}</p>
+      <p>{props.button.keycode.name}</p>
       <audio ref={audioRef} src={process.env.PUBLIC_URL + props.button.sound} />
     </button>
 
