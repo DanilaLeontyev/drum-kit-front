@@ -1,8 +1,9 @@
 import React from 'react';
-import { DrumButton as DrumButtonInterface } from './types';
+import { DrumButton as IDrumButton } from './types';
 
 type DrumButtonProps = {
-  button: DrumButtonInterface;
+  button: IDrumButton;
+  onClick: (button: IDrumButton) => void;
 }
 
 const initState = {
@@ -18,6 +19,7 @@ export const DrumButton = (props: DrumButtonProps) => {
 
   const onPlayClick = async () => {
     const audio = audioRef?.current;
+    props.onClick(props.button);
     if (audio) {
       audio.currentTime = 0;
       audio.play();
@@ -31,12 +33,19 @@ export const DrumButton = (props: DrumButtonProps) => {
   }
 
   return (
-    <button data-key={props.button.keycode.eventCode} ref={buttonRef} className={buttonClassName.join(' ')} onClick={onPlayClick}>
-      <p>{props.button.name}</p>
-      <p>{props.button.keycode.name}</p>
-      <audio ref={audioRef} src={process.env.PUBLIC_URL + props.button.sound} />
-    </button>
-
+    <>
+      <button
+        data-key={props.button.keycode.eventCode}
+        ref={buttonRef}
+        className={buttonClassName.join(' ')}
+        onClick={onPlayClick}>
+        <p>{props.button.name}</p>
+        <p>{props.button.keycode.name}</p>
+      </button>
+      <audio
+        ref={audioRef}
+        src={"/" + props.button.sound} />
+    </>
   )
 }
 

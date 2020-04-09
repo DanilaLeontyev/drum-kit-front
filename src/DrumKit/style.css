@@ -1,8 +1,13 @@
+.DrumKit {
+  display: flex;
+  flex-direction: column;
+}
+
 .ButtonContainer {
   margin: 0 auto;
   margin-top: 50px;
   height: 50%;
-  width: 80%;
+  width: 380px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -17,6 +22,40 @@
   border-radius: 2px;
   cursor: pointer;
   margin-bottom: 20px;
+}
+
+.ControlPanel {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Controlbutton {
+  border: none;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.Controlbutton__play:active {
+  background: radial-gradient(#a1b995, #2f5212);
+  box-shadow: 0px 0px 4px rgba(80, 139, 31, 0.6);
+}
+
+.Controlbutton__play {
+  box-shadow: 0px 0px 4px rgba(80, 139, 31, 0.8);
+  background: radial-gradient(#deffce, #508b1f);
+}
+
+.Controlbutton__reset:active {
+  background: radial-gradient(#a18181, #491010);
+  box-shadow: 0px 0px 4px rgba(139, 31, 31, 0.6);
+}
+
+.Controlbutton__reset {
+  box-shadow: 0px 0px 4px rgba(139, 31, 31, 0.8);
+  background: radial-gradient(#ffcece, #8b1f1f);
 }
 
 .SoundButton__playable {
