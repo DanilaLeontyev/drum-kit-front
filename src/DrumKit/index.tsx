@@ -1,5 +1,5 @@
 import './style.css';
-import React, { memo } from 'react';
+import React from 'react';
 import { DrumButton } from './DrumButton';
 import { DrumButtonsList } from './DrumButtonsList';
 import { DrumButton as IDrumButton } from './types';
@@ -29,16 +29,22 @@ export const DrumKit = () => {
     setMemory([])
   }
 
+  const onPlayClick = () => {
+    memory.forEach((sound) => {
+      new Audio(sound.sound).play();
+    })
+  }
+
   return (
     <div className="DrumKit">
       <div className="ControlPanel">
         <button className="Controlbutton Controlbutton__reset" onClick={onResetClick}>Reset</button>
-        <button className="Controlbutton Controlbutton__play">Play</button>
+        <button className="Controlbutton Controlbutton__play" onClick={onPlayClick}>Play</button>
       </div>
 
       <div>
         {memory.map((button) => {
-          return <div>{button.name}</div>
+          return <div key={Math.random()}>{button.name}</div>
         })}
       </div>
 
