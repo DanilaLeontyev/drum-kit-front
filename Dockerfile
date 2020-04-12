@@ -5,9 +5,9 @@ FROM node:12-alpine as builder
 COPY package.json package-lock.json ./
 
 # Install the dependencies and make the folder
-RUN npm install && mkdir /react-ui && mv ./node_modules ./react-ui
+RUN npm install && mkdir /drum-kit-front && mv ./node_modules ./drum-kit-front
 
-WORKDIR /react-ui
+WORKDIR /drum-kit-front
 
 COPY . .
 
@@ -25,7 +25,7 @@ COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy from the stahg 1
-COPY --from=builder /react-ui/build /usr/share/nginx/html
+COPY --from=builder /drum-kit-front/build /usr/share/nginx/html
 
 EXPOSE 3000 80
 
