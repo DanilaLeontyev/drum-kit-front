@@ -70,9 +70,10 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "docker-build": "docker build -t drum-kit-front .",
-    "docker-run-container": "docker run -d --name DrumKitFront -p 80:80 drum-kit-front",
-    "docker-start": "npm run docker-build && npm run docker-run-container"
+    "docker-build": "docker build -t donshinigami/drum-kit-front .",
+    "docker-run-container": "docker run -d --name DrumKitFront -p 80:80 donshinigami/drum-kit-front",
+    "docker-start": "npm run docker-build && npm run docker-run-container",
+    "docker-push": "docker push donshinigami/drum-kit-front:latest"
   },
   "eslintConfig": {
     "extends": "react-app"
